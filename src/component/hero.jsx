@@ -44,9 +44,11 @@ export default function Hero() {
 
             {/* الأزرار */}
             <div className="flex flex-wrap gap-4">
-              <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 hover:text-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl">
+              <a 
+                href="/learning-road"
+                className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 hover:text-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-block">
                 ابدأ التعلم مجاناً
-              </button>
+              </a>
               <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 hover:text-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center gap-2">
                 <Play className="w-5 h-5" />
                 شاهد الفيديو

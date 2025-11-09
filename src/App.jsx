@@ -10,6 +10,7 @@ import TestTypes from './component/test-types'
 import DictationTest from './component/dictation-test'
 import ListeningTest from './component/listening-test'
 import SpeakingTest from './component/speaking-test'
+import LearningRoadPage from './pages/learning-road'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
   <Route path="/dictation-test" element={<DictationTest />} />
   <Route path="/listening-test" element={<ListeningTest />} />
   <Route path="/speaking-test" element={<SpeakingTest />} />
+  <Route path="/learning-road" element={<LearningRoadPage />} />
     </Routes>
   );
 }
