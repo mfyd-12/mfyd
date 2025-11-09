@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BookOpen, Globe, Award, Play } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   const [currentWord, setCurrentWord] = useState(0);
@@ -44,11 +45,11 @@ export default function Hero() {
 
             {/* الأزرار */}
             <div className="flex flex-wrap gap-4">
-              <a 
-                href="/learning-road"
-                className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 hover:text-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-block">
+              <Link 
+                to="/learning-road"
+                className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 hover:text-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-flex items-center justify-center active:bg-yellow-400 touch-manipulation">
                 ابدأ التعلم مجاناً
-              </a>
+              </Link>
               <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 hover:text-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center gap-2">
                 <Play className="w-5 h-5" />
                 شاهد الفيديو
