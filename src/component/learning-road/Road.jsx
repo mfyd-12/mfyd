@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Level from './Level';
 import ProgressBar from './ProgressBar';
 import ListeningChallenge from './ListeningChallenge';
+import ConversationChallenge from './ConversationChallenge';
 
 const STORAGE_KEY = 'learningRoadProgress';
 
@@ -41,6 +42,12 @@ const defaultLevels = [
     title: 'Level 4 - Listening Challenge',
     type: 'listening',
     // Data handled by ListeningChallenge component
+  },
+  {
+    id: 5,
+    title: 'Level 5 - Conversation Challenge',
+    type: 'conversation',
+    // Data handled by ConversationChallenge component
   }
 ];
 
@@ -107,7 +114,7 @@ export default function Road() {
 
       <ProgressBar percent={percent} />
 
-      <div className="mt-6 flex flex-col lg:flex-row gap-6 items-center lg:items-start">
+      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
         {levels.map((lvl, idx) => (
           <Level
             key={lvl.id}
@@ -149,6 +156,16 @@ function QuizWrapper({ level, levelIndex, onFinish, onCancel }) {
       <ListeningChallenge
         onComplete={(passed) => onFinish(passed)}
         onCancel={onCancel}
+      />
+    );
+  }
+
+  // Level 5: Conversation Challenge
+  if (level.type === 'conversation') {
+    return (
+      <ConversationChallenge
+        onComplete={() => onFinish(true)}
+        onBack={onCancel}
       />
     );
   }
