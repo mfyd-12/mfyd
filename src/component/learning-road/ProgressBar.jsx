@@ -1,9 +1,15 @@
 import React from 'react';
 
-export default function ProgressBar({ percent = 0 }) {
+const ProgressBar = ({ currentLevel, totalLevels }) => {
+  const percentage = Math.round((currentLevel / totalLevels) * 100);
   return (
-    <div className="w-full bg-white/20 rounded-full h-3 overflow-hidden">
-      <div className="h-3 bg-gradient-to-r from-yellow-300 to-blue-600 transition-all" style={{ width: `${percent}%` }} />
+    <div className="w-full bg-gray-200 rounded-full h-4 mb-4">
+      <div
+        className="bg-blue-500 h-4 rounded-full transition-all duration-300"
+        style={{ width: `${percentage}%` }}
+      ></div>
     </div>
   );
-}
+};
+
+export default ProgressBar;
